@@ -1,0 +1,8 @@
+scapy
+tk
+requests
+numpy
+torch
+sklearn
+netifaces
+pandas
