@@ -12,7 +12,7 @@
 - Administrative/root privileges (required for packet sniffing)
 - **Npcap** (Windows) or **libpcap** (Linux/Mac) for packet capture
 - ipinfo.io access token (for geolocation)
-- CICIDS2017 dataset (optional, for training)
+- CICIDS2017 dataset (for training)
 
 ## Installation
 1. Clone the repository:
@@ -32,7 +32,7 @@ Obtain an ipinfo.io access token:
 Sign up at https://ipinfo.io/signup to get a free token.
 Replace "YOUR_IPINFO_TOKEN" in netpulse.py (line ~70) with your token
 
-Usage
+## Usage
 1.Train the Model (Optional):
 Download the CICIDS2017 dataset CSVs from https://www.kaggle.com/datasets/chethuhn/network-intrusion-dataset
 Place them in the archive (2) folder (or adjust folder_path in train_netpulse.py).
@@ -55,11 +55,11 @@ Interface Selection
 The GUI displays all available network interfaces with their IPs and MAC addresses (e.g., "Wi-Fi (IP: 192.168.1.3) (MAC: 80:38:fb:f7:d4:ec)").
 Choose the interface connected to the network you want to monitor.
 
-Notes
+## Notes
 If lstm_netpulse_model.pth or scaler.pkl are missing, run train_netpulse.py first.
 The current model is trained on CICIDS2017 flow data, which may misclassify single packets. For better accuracy, retrain with single-packet features from CICIDS2017 PCAPs.
 
-Troubleshooting
+## Troubleshooting
 Permission Denied: Run with admin/root privileges (sudo or as Administrator).
 No Interfaces Found: Ensure Npcap/libpcap is installed and network adapters are active.
 Geolocation Fails: Verify your ipinfo.io token is correct and you have internet access.
